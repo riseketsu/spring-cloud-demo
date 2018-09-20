@@ -1,12 +1,12 @@
-package com.rskt.spring.cloud.clouddemostart;
+package com.rskt.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CloudDemoStartApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudDemoStartApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
