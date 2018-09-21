@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+<context id="mysql" defaultModelType="hierarchical" targetRuntime="MyBatis3Simple" >
+    <property name="autoDelimitKeywords" value="false"/>
+    <property name="javaFileEncoding" value="UTF-8"/>
+    <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+    <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+    <property name="beginningDelimiter" value="`"/>
+    <property name="endingDelimiter" value="`"/>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+    	connectionURL="jdbc:mysql://localhost:3306/rsktdb"
+    	userId="root" 
+    	password="root">
+    </jdbcConnection>
+
+    <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+        <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.rskt.spring.cloud.domain" targetProject="src/main/java">
+        <property name="constructorBased" value="false"/>
+        <property name="enableSubPackages" value="true"/>
+        <property name="immutable" value="false"/>
+        <property name="rootClass" value="com.rskt.spring.cloud.domain.BaseDomain"/>
+        <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.rskt.spring.cloud.domain.mapper" targetProject="src/main/resources">
+        <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <javaClientGenerator targetPackage="com.rskt.spring.cloud.domain.mapper" type="ANNOTATEDMAPPER" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+        <!-- <property name="rootInterface" value=""/> -->
+    </javaClientGenerator>
+
+    <table tableName="tbl_user" >
+        <property name="constructorBased" value="false"/>
+        <property name="ignoreQualifiersAtRuntime" value="false"/>
+        <property name="immutable" value="false"/>
+        <property name="modelOnly" value="false"/>
+        <property name="selectAllOrderByClause" value="user_id asc"/>
+        <property name="useActualColumnNames" value="false"/>
+    </table>
+</context>
+</generatorConfiguration>
