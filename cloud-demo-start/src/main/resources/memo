@@ -1,0 +1,13 @@
+文件配置说明：
+1.配置文件(.properties/.json等)置于config文件夹下
+2.国际化(i18n))置于i18n文件夹下
+3.spring.xml置于META-INF/spring文件夹下
+4.页面以及js/css/image等置于static文件夹下的各自文件下
+
+SpringBoot配置文件信息：
+*1点和2点适合在生产环境下，例如，打包成可执行的jar包
+*同时在四个地方都有配置文件，配置文件的优先级是从1到4
+1.当前目录的 “/config”的子目录下
+2.当前目录下
+3.classpath根目录的“/config”包下
+4.classpath的根目录下
