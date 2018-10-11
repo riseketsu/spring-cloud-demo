@@ -65,7 +65,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
 	// 添加 OAuth2 的依赖
-	compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.3.RELEASE'
+	compile('org.springframework.boot:spring-boot-autoconfigure:1.5.2.RELEASE')
+	compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE')
+	//compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.3.RELEASE'
 
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.9-rc'
