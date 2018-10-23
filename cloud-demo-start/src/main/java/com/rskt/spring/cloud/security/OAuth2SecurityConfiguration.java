@@ -4,8 +4,6 @@
 package com.rskt.spring.cloud.security;
 
 import javax.servlet.Filter;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -54,10 +52,9 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				"/login");
 		OAuth2RestTemplate githubTemplate = new OAuth2RestTemplate(github(), oauth2ClientContext);
 		githubFilter.setRestTemplate(githubTemplate);
-		UserInfoTokenServices tokenServices = new UserInfoTokenServices(githubResource().getUserInfoUri(),
-				github().getClientId());
-		tokenServices.setRestTemplate(githubTemplate);
-		githubFilter.setTokenServices(tokenServices);
+		// UserInfoTokenServices tokenServices = new UserInfoTokenServices(githubResource().getUserInfoUri(), github().getClientId());
+		// tokenServices.setRestTemplate(githubTemplate);
+		// githubFilter.setTokenServices(tokenServices);
 		return githubFilter;
 
 	}
@@ -78,10 +75,10 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		return new AuthorizationCodeResourceDetails();
 	}
 
-	@Bean
-	@ConfigurationProperties("github.resource")
-	public ResourceServerProperties githubResource() {
-		return new ResourceServerProperties();
-	}
+//	@Bean
+//	@ConfigurationProperties("github.resource")
+//	public ResourceServerProperties githubResource() {
+//		return new ResourceServerProperties();
+//	}
 
 }
